@@ -1,10 +1,10 @@
 import streamlit as st
-import joblib
+import pickle
 import re
 
 # Load the pkl files
-model = joblib.load('sentiment_model.pkl')
-vectorizer = joblib.load('tfidf_vectorizer.pkl')
+model = pickle.load(open('sentiment_model.pkl','rb'))
+vectorizer = pickle.load(open('tfidf_vectorizer.pkl', 'rb'))
 
 
 def clean_text(text):
